@@ -6,19 +6,19 @@ project 1 - A Random Quote Generator
 // Function "printQuote" takes a quote from function "getRandomQuote" and formats it for printing
 function printQuote (){
   var printQuote = getRandomQuote();
-    var HTML = '<h2>Quote: ' + printQuote.quote + '</h2>';
-  HTML += '<p>Source: ' + printQuote.source + '</p>';
+    var HTML = '<div id="quote-box"> <p class="quote">Quote: ' + printQuote.quote + '</p>';
+  HTML += '<p class="source">Source: ' + printQuote.source + '</p>';
   
   //checks if property 'year' and "citation" is in the 'quotes' array
   for (var prop in printQuote){
   if (prop === "year"){
-    HTML += '<p>Year: ' + printQuote.year + '</p>';
+    HTML += '<span class="year">Year: ' + printQuote.year + '</span>';
   }
   else if (prop === "citation"){
-    HTML += '<p>Citation: ' + printQuote.citation + '</p>';
+    HTML += '<span class="citation">Citation: ' + printQuote.citation + '</span>';
   }
   }
-  
+  HTML +='</div>';
   return HTML;
   }
   
